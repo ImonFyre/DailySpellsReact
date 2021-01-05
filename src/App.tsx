@@ -1,26 +1,26 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Header } from './classes/Header';
+import { render } from '@testing-library/react';
+import { ICharacterProp } from './classes/interfaces/customInputProps';
+import { StatBlock } from './classes/StatBlock';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component<ICharacterProp>
+{
+	render()
+	{
+		const character = this.props.character;
+		return (
+			<main>
+				<Header character={character} />
+				<StatBlock stats={character.stats} />
+			</main>
+		);
+	}
 }
+
+
+
 
 export default App;
