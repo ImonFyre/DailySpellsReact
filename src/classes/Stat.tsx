@@ -1,14 +1,14 @@
 import React from "react";
-import { INumberData } from "./interfaces/customInputProps";
+import { IStatData } from "./interfaces/customInputProps";
 
-export class Stat extends React.Component<INumberData>
+export class Stat extends React.Component<IStatData>
 {
 	render()
 	{
-		let bonus = this.computeBonus(this.props.data);
-		return (<div>
-					<span>{this.props.data}</span><span>{(bonus < 0 ? bonus : `+${bonus}`)}</span>
-				</div>);
+		let bonus = this.computeBonus(this.props.value);
+		return (<li>
+					{this.props.name}: <span className="statNumber">{this.props.value}</span> <span className="statBonus">{(bonus < 0 ? bonus : `+${bonus}`)}</span>
+				</li>);
 	}
 
 	private computeBonus(stat: number) : number

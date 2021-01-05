@@ -15,3 +15,9 @@ export interface INumberData
 {
 	data : number;
 }
+
+export interface IStatData
+{
+	value: number;
+	name:string;
+}
