@@ -1,7 +1,7 @@
 import React from "react";
-import { IStringData } from "./interfaces/customInputProps";
+import { IClassData } from "./interfaces/customInputProps";
 
-export class Class extends React.Component <IStringData>
+export class Class extends React.Component <IClassData>
 {
-	render() { return this.props.data; }
+	render() { return <li>{this.props.name} {this.props.level}</li>; }
 }

@@ -1,5 +1,5 @@
 export interface ICharacterProp {
-	character: {name:string, class:string, level:number, race:string, stats:{ str:number, dex:number, con:number, int:number, wis:number, cha:number}};
+	character: {name:string, class:{name:string, level:number}[], race:string, stats:{ str:number, dex:number, con:number, int:number, wis:number, cha:number}};
 }
 
 export interface IStatsProp {
@@ -20,4 +20,10 @@ export interface IStatData
 {
 	value: number;
 	name:string;
+}
+
+export interface IClassData
+{
+	name:string;
+	level:number;
 }

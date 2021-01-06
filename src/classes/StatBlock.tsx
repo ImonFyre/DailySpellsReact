@@ -1,4 +1,3 @@
-import { stat, Stats } from "fs";
 import React from "react";
 import { IStatsProp } from "./interfaces/customInputProps";
 import { Stat } from "./Stat";
@@ -17,6 +16,5 @@ export class StatBlock extends React.Component<IStatsProp>
 				<ul>{statList}</ul>
 			</div>
 		);
-		return null;
 	}
 }

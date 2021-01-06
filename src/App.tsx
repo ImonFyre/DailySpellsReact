@@ -1,8 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Header } from './classes/Header';
-import { render } from '@testing-library/react';
 import { ICharacterProp } from './classes/interfaces/customInputProps';
 import { StatBlock } from './classes/StatBlock';
 
