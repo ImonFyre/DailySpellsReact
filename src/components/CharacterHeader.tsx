@@ -4,7 +4,7 @@ import { Class } from "./Class";
 import { ICharacterProp } from "./interfaces/customInputProps";
 import { Race } from "./Race";
 
-export class Header extends React.Component<ICharacterProp>
+export class CharacterHeader extends React.Component<ICharacterProp>
 {
 	render()
 	{
