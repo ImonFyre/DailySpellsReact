@@ -15,8 +15,11 @@ export class CharacterHeader extends React.Component<ICharacterProp>
 		return (
 			<div className="header">
 				<h2><CharacterName data={data.name}/></h2>
-				<ul>{classLevels}</ul>
-					 <span><Race data={data.race} /></span>
+				<span><Race data={data.race} /></span>
+				<ul className="classLevels">
+					{classLevels}
+				</ul>
+
 			</div>
 		);
 	}

@@ -16,17 +16,23 @@ class App extends React.Component<ICharactersProp>
 			return <NavItem tolink={`/character/${idx}`} item={c.name} />
 		})
 		return (
-			<main>
-				<Router>
-					{nav}
-					<Route path='/character/:id'
-							render={props => (
-								<Character character={this.props.characters[props.match.params.id]} />
-							)
-						} />
 
+				<Router>
+					<main>
+						<nav>
+							<ul>
+								{nav}
+							</ul>
+						</nav>
+
+						<Route path='/character/:id'
+								render={props => (
+									<Character character={this.props.characters[props.match.params.id]} />
+								)
+							} />
+					</main>
 				</Router>
-			</main>
+
 		);
 	}
 }
