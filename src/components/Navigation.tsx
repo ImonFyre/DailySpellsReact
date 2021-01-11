@@ -18,8 +18,6 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 
 	componentDidMount()
 	{
-		const myHeaders = new Headers();
-		myHeaders.append('Access-Control-Allow-Origin', '*');
 		fetch("http://localhost:59352/api/DailySpells/GetMenu")
 		.then(result => result.json())
 		.then((result) => {

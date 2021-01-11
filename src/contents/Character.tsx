@@ -18,13 +18,22 @@ export class Character extends Component<INumberData,ICharacterState>
 
 	componentDidMount()
 	{
-		const myHeaders = new Headers();
-		myHeaders.append('Access-Control-Allow-Origin', '*');
-		fetch(`http://localhost:59352/api/DailySpells/GetCharacter/${this.props.data}`)
+		this.getData(this.props.data);
+	}
+
+	componentDidUpdate(prevProps:any)
+	{
+		if(prevProps.data !== this.props.data)
+			this.getData(this.props.data);
+	}
+
+	getData(id:number)
+	{
+		fetch(`http://localhost:59352/api/DailySpells/GetCharacter/${id}`)
 		.then(result => result.json())
 		.then((result) => {
 				this.setState( { isLoaded : true,
-				character: result});
+								character: result});
 			},
 			(error) => {
 				this.setState({
