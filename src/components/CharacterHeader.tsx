@@ -9,7 +9,7 @@ export class CharacterHeader extends React.Component<ICharacterProp>
 	render()
 	{
 		const data = this.props.character;
-		const classLevels = data.class.map(c => {
+		const classLevels = data.classes.map(c => {
 			return <Class name={c.name} level={c.level} />
 		});
 		return (

@@ -76,11 +76,3 @@ nav > ul{
 .classLevels > li:last-child::after {
 	content: "";
   }
-@keyframes App-logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}

@@ -6,7 +6,7 @@ export class Stat extends React.Component<IStatData>
 	render()
 	{
 		let bonus = this.computeBonus(this.props.value);
-		return (<li>
+		return (<li key={this.props.name}>
 					{this.props.name}: <span className="statNumber">{this.props.value}</span> <span className="statBonus">{(bonus < 0 ? bonus : `+${bonus}`)}</span>
 				</li>);
 	}

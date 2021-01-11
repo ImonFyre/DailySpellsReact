@@ -1,40 +1,33 @@
 import React from 'react';
 import './App.css';
-import { ICharactersProp } from './components/interfaces/customInputProps';
 
-import {BrowserRouter as Router, Route, useLocation} from "react-router-dom"
-import { NavItem } from './components/NavItem';
+import {BrowserRouter as Router, Route} from "react-router-dom"
 import { Character } from './contents/Character';
+import { Navigation } from './components/Navigation';
 
 
 
-class App extends React.Component<ICharactersProp>
+class App extends React.Component
 {
 	render()
 	{
-		let nav = this.props.characters.map((c,idx) => {
-			return <NavItem tolink={`/character/${idx}`} item={c.name} />
-		})
 		return (
 
 				<Router>
 					<main>
 						<nav>
-							<ul>
-								{nav}
-							</ul>
+							<Navigation  />
 						</nav>
 
 						<Route path='/character/:id'
-								render={props => (
-									<Character character={this.props.characters[props.match.params.id]} />
-								)
-							} />
+							render={props => (<Character data={props.match.params.id} />)}>
+						</Route>
 					</main>
 				</Router>
 
 		);
 	}
+
 }
 
 export default App;

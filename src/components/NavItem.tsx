@@ -6,7 +6,7 @@ export class NavItem extends Component<INavItem>
 {
 	render()
 	{
-		return ( <li>
+		return ( <li key={this.props.item}>
 			<Link to={this.props.tolink}>
 				{this.props.item}
 			</Link>
