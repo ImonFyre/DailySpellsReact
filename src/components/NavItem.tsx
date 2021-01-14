@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { INavItem } from "./interfaces/customInputProps";
+import { INavItem } from "../interfaces/customInputProps";
 
 export class NavItem extends Component<INavItem>
 {

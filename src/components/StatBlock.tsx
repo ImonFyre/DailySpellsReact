@@ -1,5 +1,5 @@
 import React from "react";
-import { IStatsProp } from "./interfaces/customInputProps";
+import { IStatsProp } from "../interfaces/customInputProps";
 import { Stat } from "./Stat";
 
 export class StatBlock extends React.Component<IStatsProp>

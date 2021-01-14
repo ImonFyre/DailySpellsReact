@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { INavItem } from "./interfaces/customInputProps";
+import { INavItem } from "../interfaces/customInputProps";
 import { NavItem } from "./NavItem";
 
 
@@ -47,9 +47,11 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 		}
 		else
 		{
-			let nav = items.map((c : INavItem, idx:number) => {
-				return <NavItem tolink={`/character/${idx}`} item={c.item} />
-			})
+			let nav = [ <NavItem tolink='/' item="Home" /> ]
+						.concat( items.map((c : INavItem, idx:number) => {
+											return <NavItem tolink={`/character/${idx}`} item={c.item} />
+						}));
+
 			return <ul>{nav}</ul> ;
 		}
 	}

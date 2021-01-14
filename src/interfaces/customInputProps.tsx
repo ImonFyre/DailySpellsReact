@@ -48,3 +48,16 @@ export interface INavigationState
 	items: INavItemList;
 	isLoaded:boolean;
 }
+
+export interface ICheckableComponents
+{
+	list: ICheckableComponent[];
+	title: string;
+}
+
+export interface ICheckableComponent
+{
+	checked: boolean;
+	value : number;
+	description: string;
+}

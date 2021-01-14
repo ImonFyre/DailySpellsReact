@@ -1,5 +1,5 @@
 import React from "react";
-import { IClassData } from "./interfaces/customInputProps";
+import { IClassData } from "../interfaces/customInputProps";
 
 export class Class extends React.Component <IClassData>
 {

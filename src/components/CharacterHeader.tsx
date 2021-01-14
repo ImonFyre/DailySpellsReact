@@ -1,7 +1,7 @@
 import React from "react";
 import { CharacterName } from "./CharacterName";
 import { Class } from "./Class";
-import { ICharacterProp } from "./interfaces/customInputProps";
+import { ICharacterProp } from "../interfaces/customInputProps";
 import { Race } from "./Race";
 
 export class CharacterHeader extends React.Component<ICharacterProp>
