@@ -61,3 +61,8 @@ export interface ICheckableComponent
 	value : number;
 	description: string;
 }
+
+export interface ICheckableComponentWithState extends ICheckableComponent
+{
+	setState: any;
+}

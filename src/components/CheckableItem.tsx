@@ -1,16 +1,24 @@
-import { Component } from "react";
+import { Component } from 'react';
+import { toast, ToastOptions } from 'react-toastify';
+
 import { ICheckableComponent } from "../interfaces/customInputProps";
 
-export class CheckableItem extends Component<ICheckableComponent>
-{
-	render()
-	{
-		let item = this.props;
-		return (
-			<li className={item.checked ? "disc" : "circle"}>
-				{item.value} {item.description}
-			</li>
-		);
-	}
+import { Dice, DiceType } from "../Util/Dice";
 
+export const CheckableItem = (props: ICheckableComponent) =>
+{
+	let toastParams : ToastOptions = { position: toast.POSITION.TOP_CENTER,
+										autoClose: false };
+	let item = props;
+	return (
+		<li className={item.checked ? "disc" : "circle"} onClick={() => roll()}>
+			{item.value} {item.description}
+		</li>
+	);
+
+	function roll()
+	{
+		let diceRoll = Dice.roll(DiceType.d20);
+		toast(`Rolled ${item.description} ${diceRoll} + ${item.value} = ${diceRoll + item.value}`, toastParams);
+	}
 }

@@ -6,14 +6,15 @@ import {BrowserRouter as Router, Route} from "react-router-dom"
 import { Character } from './contents/Character';
 import { Navigation } from './components/Navigation';
 import { Home } from './contents/Home';
-
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class App extends React.Component
 {
 	render()
 	{
 		return (
+				<>
 				<Router>
 					<main>
 						<nav id='sidebar'>
@@ -27,6 +28,8 @@ class App extends React.Component
 						</Route>
 					</main>
 				</Router>
+				<ToastContainer limit={5} draggable={true} />
+				</>
 		);
 	}
 }
