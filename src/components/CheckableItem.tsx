@@ -5,20 +5,24 @@ import { ICheckableComponent } from "../interfaces/customInputProps";
 
 import { Dice, DiceType } from "../Util/Dice";
 
-export const CheckableItem = (props: ICheckableComponent) =>
-{
-	let toastParams : ToastOptions = { position: toast.POSITION.TOP_CENTER,
+const TOAST_PARAMS : ToastOptions = { position: toast.POSITION.TOP_CENTER,
 										autoClose: false };
-	let item = props;
-	return (
-		<li className={item.checked ? "disc" : "circle"} onClick={() => roll()}>
-			{item.value} {item.description}
-		</li>
-	);
 
-	function roll()
+
+export class CheckableItem extends Component<ICheckableComponent>
+{
+	render()
+	{
+		let item = this.props;
+		return (
+			<li className={item.checked ? "disc" : "circle"} onClick={() => this.roll()}>
+				{item.value} {item.description}
+			</li>
+		);
+	}
+	private roll()
 	{
 		let diceRoll = Dice.roll(DiceType.d20);
-		toast(`Rolled ${item.description} ${diceRoll} + ${item.value} = ${diceRoll + item.value}`, toastParams);
+		toast(`Rolled ${this.props.description} ${diceRoll} + ${this.props.value} = ${diceRoll + this.props.value}`, TOAST_PARAMS);
 	}
 }

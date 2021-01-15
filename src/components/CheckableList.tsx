@@ -20,5 +20,4 @@ export class CheckableList extends Component<ICheckableComponents>
 			</>
 		);
 	}
-
 }

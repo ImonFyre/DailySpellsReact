@@ -1,4 +1,5 @@
-export enum DiceType {
+export enum DiceType
+{
 	d2,
 	d3,
 	d4,
@@ -10,11 +11,13 @@ export enum DiceType {
 	d100
 }
 
-export class Dice {
-
-	public static roll(diceType: DiceType = DiceType.d6, bonus = 0) {
+export class Dice
+{
+	public static roll(diceType: DiceType = DiceType.d6, bonus = 0)
+	{
 		let sides = 6
-		switch (diceType) {
+		switch (diceType)
+		{
 			case DiceType.d2:
 				sides = 2;
 				break;
