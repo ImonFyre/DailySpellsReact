@@ -18,7 +18,7 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 
 	componentDidMount()
 	{
-		fetch("http://localhost:59352/api/DailySpells/GetMenu")
+		fetch("http://api.artoodeetoo.ca/api/DailySpells/GetMenu")
 		.then(result => result.json())
 		.then((result) => {
 				this.setState( { isLoaded : true,

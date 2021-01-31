@@ -31,7 +31,7 @@ export class Character extends Component<INumberData,ICharacterState>
 
 	getData(id:number)
 	{
-		fetch(`http://localhost:59352/api/DailySpells/GetCharacter/${id}`)
+		fetch(`http://api.artoodeetoo.ca/api/DailySpells/GetCharacter/${id}`)
 		.then(result => result.json())
 		.then((result) => {
 				this.setState( { isLoaded : true,
@@ -74,13 +74,23 @@ export class Character extends Component<INumberData,ICharacterState>
 		else
 		{
 		return (<>
-					<section>
-						<CharacterHeader character={character} />
-					</section>
-					<section>
-						<StatBlock stats={character.characterStats} />
-						<CheckableList list={this.generateSavingThrowList()} title='Saving Throws' />
-						<CheckableList list={this.generateSkillsList()} title='Skills' />
+					<section className="container m-0">
+						<div className="row">
+							<CharacterHeader character={character} />
+						</div>
+						<div className="row">
+							<div className="col">
+								<StatBlock stats={character.characterStats} />
+							</div>
+						</div>
+						<div className="row mt-4">
+							<div className="col-3">
+								<CheckableList list={this.generateSavingThrowList()} title='Saving Throws' />
+							</div>
+							<div className="col">
+								<CheckableList list={this.generateSkillsList()} title='Skills' />
+							</div>
+						</div>
 					</section>
 				</>);
 		}

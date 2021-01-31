@@ -13,18 +13,3 @@ code {
 }
 
 
-.statBlock
-{
-	border: 1px solid black;
-}
-
-.statBlock ul
-{
-	list-style: none;
-}
-
-.statBlock ul li
-{
-	border: 2px solid black;
-	width:100px;
-}

@@ -1,13 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/App.css';
-
 import {BrowserRouter as Router, Route} from "react-router-dom"
 import { Character } from './contents/Character';
 import { Navigation } from './components/Navigation';
 import { Home } from './contents/Home';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import './styles/App.css';
 
 class App extends React.Component
 {
