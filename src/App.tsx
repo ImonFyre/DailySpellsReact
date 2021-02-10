@@ -17,6 +17,7 @@ class App extends React.Component
 				<>
 				<Router>
 					<main>
+						<input type="checkbox" className="menuToggle" />
 						<nav id='sidebar'>
 							<Navigation  />
 						</nav>

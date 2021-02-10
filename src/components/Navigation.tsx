@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { INavItem } from "../interfaces/customInputProps";
+import { IGraphQLNavItem, INavItem } from "../interfaces/customInputProps";
 import { NavItem } from "./NavItem";
 
 
-export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, items:INavItem[] }>
+export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, items:IGraphQLNavItem[] }>
 {
 
 	constructor(props :any)
@@ -18,11 +18,22 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 
 	componentDidMount()
 	{
-		fetch("http://api.artoodeetoo.ca/api/DailySpells/GetMenu")
+		fetch("http://api.artoodeetoo.ca/graphql", {
+			method: "POST",
+			headers: {"content-type": "application/json" },
+			mode: "cors",
+			body: JSON.stringify({query : `query {
+				characters {
+				  name, id
+				}
+			  }`})
+			},
+		)
 		.then(result => result.json())
 		.then((result) => {
+				console.log(result);
 				this.setState( { isLoaded : true,
-				items: result});
+				items: result.data.characters});
 			},
 			(error) => {
 				this.setState({
@@ -47,9 +58,9 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 		}
 		else
 		{
-			let nav = [ <NavItem tolink='/' item="Home" /> ]
-						.concat( items.map((c : INavItem, idx:number) => {
-											return <NavItem tolink={`/character/${idx}`} item={c.item} />
+			let nav = [ <NavItem tolink='/' name="Home" /> ]
+						.concat( items.map((c : IGraphQLNavItem, idx:number) => {
+											return <NavItem tolink={`/character/${idx}`} name={c.name} />
 						}));
 
 			return <ul>{nav}</ul> ;

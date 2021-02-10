@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { INavItem } from "../interfaces/customInputProps";
+import { IGraphQLNavItem, INavItem } from "../interfaces/customInputProps";
 
-export class NavItem extends Component<INavItem>
+export class NavItem extends Component<IGraphQLNavItem>
 {
 	render()
 	{
-		return ( <li key={this.props.item}>
+		return ( <li key={this.props.name}>
 			<Link to={this.props.tolink}>
-				{this.props.item}
+				{this.props.name}
 			</Link>
 		</li>)
 	}

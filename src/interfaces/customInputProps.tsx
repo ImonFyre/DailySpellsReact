@@ -42,6 +42,12 @@ export interface INavItem
 	item: string;
 }
 
+export interface IGraphQLNavItem
+{
+	tolink: string;
+	name: string;
+}
+
 export interface INavigationState
 {
 	error: any;

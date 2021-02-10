@@ -38,6 +38,10 @@
 .App-link {
 	color: #61dafb;
 }
+.menuToggle
+{
+	display:none;
+}
 main
 {
 	display: flex;
