@@ -46,6 +46,7 @@ export interface IGraphQLNavItem
 {
 	tolink: string;
 	name: string;
+	id: number;
 }
 
 export interface INavigationState

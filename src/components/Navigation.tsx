@@ -58,9 +58,9 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 		}
 		else
 		{
-			let nav = [ <NavItem tolink='/' name="Home" /> ]
-						.concat( items.map((c : IGraphQLNavItem, idx:number) => {
-											return <NavItem tolink={`/character/${idx}`} name={c.name} />
+			let nav = [ <NavItem tolink='/' name="Home" id={-1} /> ]
+						.concat( items.map((c : IGraphQLNavItem) => {
+											return <NavItem tolink={`/character/${c.id}`} name={c.name} id={c.id} />
 						}));
 
 			return <ul>{nav}</ul> ;

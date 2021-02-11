@@ -31,11 +31,36 @@ export class Character extends Component<INumberData,ICharacterState>
 
 	getData(id:number)
 	{
-		fetch(`http://api.artoodeetoo.ca/api/DailySpells/GetCharacter/${id}`)
+		let apiFetch = `http://api.artoodeetoo.ca/api/DailySpells/GetCharacter/${id}`;
+		let graphqlFetch = "http://api.artoodeetoo.ca/graphql";
+		let graphqlOptions : RequestInit =  {
+			method: "POST",
+			headers: {"content-type": "application/json" },
+			mode: "cors",
+			body: JSON.stringify({query : `query {
+				character(id:${id})  {
+					name,
+					id,
+					race,
+					classes {
+					  name, level
+					},
+					characterStats{
+					  str,
+					  dex,
+					  con,
+					  int,
+					  wis,
+					  cha
+					}
+				  }
+			  }`})
+			};
+		fetch(graphqlFetch, graphqlOptions)
 		.then(result => result.json())
 		.then((result) => {
 				this.setState( { isLoaded : true,
-								character: result});
+								character: result.data.character});
 			},
 			(error) => {
 				this.setState({
