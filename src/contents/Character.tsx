@@ -38,21 +38,13 @@ export class Character extends Component<INumberData,ICharacterState>
 			headers: {"content-type": "application/json" },
 			mode: "cors",
 			body: JSON.stringify({query : `query {
-				character(id:${id})  {
-					name,
+				character(id:${id})
+				{
 					id,
-					race,
-					classes {
-					  name, level
-					},
-					characterStats{
-					  str,
-					  dex,
-					  con,
-					  int,
-					  wis,
-					  cha
-					}
+					name,
+					characterStats{str, dex, con, int, wis, cha},
+					race { name },
+				   	characterClasses { className, level }
 				  }
 			  }`})
 			};

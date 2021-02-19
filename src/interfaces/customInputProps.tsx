@@ -1,8 +1,8 @@
 export interface ICharacterProp {
-	character: {name:string, classes:{name:string, level:number}[], race:string, characterStats:{ str:number, dex:number, con:number, int:number, wis:number, cha:number}};
+	character: {name:string, characterClasses:{className:string, level:number}[], race:{ name: string}, characterStats:{ str:number, dex:number, con:number, int:number, wis:number, cha:number}};
 }
 export interface ICharactersProp {
-	characters: {name:string, classes:{name:string, level:number}[], race:string, characterStats:{ str:number, dex:number, con:number, int:number, wis:number, cha:number}}[];
+	characters: {name:string, characterClasses:{className:string, level:number}[], race:{ name: string}, characterStats:{ str:number, dex:number, con:number, int:number, wis:number, cha:number}}[];
 }
 
 export interface IStatsProp {
