@@ -20,7 +20,7 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 	{
 		fetch("http://api.artoodeetoo.ca/graphql", {
 			method: "POST",
-			headers: {"content-type": "application/json" },
+			headers: {"content-type": "application/json" , "Access-Control-Allow-Origin": "http://dailyspellsreact.artoodeetoo.ca/" },
 			mode: "cors",
 			body: JSON.stringify({query : `query {
 				characters {

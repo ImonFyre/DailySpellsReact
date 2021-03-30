@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Daily Spells",
+  "name": "D&D Daily Spells character management",
   "icons": [
     {
       "src": "favicon.ico",
