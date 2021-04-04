@@ -91,7 +91,7 @@ export class Character extends Component<INumberData,ICharacterState>
 		else
 		{
 		return (<>
-					<section className="container m-0">
+					<section className="container m-md-3">
 						<div className="row">
 							<CharacterHeader character={character} />
 						</div>
@@ -101,10 +101,10 @@ export class Character extends Component<INumberData,ICharacterState>
 							</div>
 						</div>
 						<div className="row mt-4">
-							<div className="col-3">
+							<div className="col col-md-3 px-0 px-md-0">
 								<CheckableList list={this.generateSavingThrowList()} title='Saving Throws' />
 							</div>
-							<div className="col">
+							<div className="col py-0 py-md-0">
 								<CheckableList list={this.generateSkillsList()} title='Skills' />
 							</div>
 						</div>

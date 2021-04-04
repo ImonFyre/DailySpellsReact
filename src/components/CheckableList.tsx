@@ -7,7 +7,7 @@ export class CheckableList extends Component<ICheckableComponents>
 	render()
 	{
 		let list = this.props.list.map(item => {
-			return <CheckableItem checked={item.checked} description={item.description} value={item.value} />
+			return <CheckableItem key={item.description} checked={item.checked} description={item.description} value={item.value} />
 		});
 		return (
 			<>

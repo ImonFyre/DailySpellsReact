@@ -4,6 +4,7 @@
 	--fontsize-p:1.2rem;
 	--fontsize-nav:1.6rem;
 	--typing-font:3rem;
+	--flyout:250px;
 }
 
 .App {
@@ -35,6 +36,7 @@
 	color: white;
 }
 
+
 .App-link {
 	color: #61dafb;
 }
@@ -45,15 +47,19 @@
 main
 {
 	display: flex;
+
 }
 section
 {
 	flex:var(--condiv-flex);
 }
-
+section.headerBar
+{
+	display: none;
+}
 nav
 {
-padding:60px 30px 0px 30px ;
+	/*padding:60px 30px 0px 30px ;*/
 	flex:var(--sidebar-flex);
 	max-width: 250px;
 }
@@ -96,4 +102,52 @@ nav > ul{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+nav
+{
+	z-index: 1;
+}
+
+@media (max-width:768px)
+{
+	main
+	{
+		flex-direction: column;
+	}
+
+	section.headerBar
+	{
+		display: block;
+		width: 100%;
+		flex:none;
+		height:40px;
+	}
+
+	section.container,section.headerBar
+	{
+		transition: 0.53s transform;
+  		transition-timing-function: cubic-bezier(0.38, 0.52, 0.37, 1);
+	}
+
+	#sidebar
+	{
+		position: fixed;
+		left:-100vw;
+		transition: 0.53s transform;
+  		transition-timing-function: cubic-bezier(0.38, 0.52, 0.37, 1);
+	}
+
+	.menuToggle:checked + #sidebar
+	{
+		transform: translateX(100vw);
+	}
+	.menuToggle:checked ~ section.container
+	{
+		transform: translateX(30vw);
+	}
+	.menuToggle:checked ~ section.headerBar
+	{
+		transform: translateX(30vw);
+	}
 }

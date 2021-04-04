@@ -17,15 +17,27 @@ class App extends React.Component
 				<>
 				<Router>
 					<main>
-						<input type="checkbox" className="menuToggle" />
-						<nav id='sidebar'>
+						<input id="menuToggle" type="checkbox" className="menuToggle" />
+						<nav id='sidebar' className="p-0 pl-md-3 pt-md-3">
 							<Navigation  />
 						</nav>
+						<section className="headerBar">
+							<label htmlFor="menuToggle">
+								<svg viewBox="0 0 100 80" width="40" height="40" >
+									<rect width="100" height="20"></rect>
+									<rect y="30" width="100" height="20"></rect>
+									<rect y="60" width="100" height="20"></rect>
+								</svg>
+							</label>
+						</section>
 						<Route exact path="/">
 							<Home />
 						</Route>
 						<Route path='/character/:id'
-							render={props => (<Character data={props.match.params.id} />)}>
+							render={props => (<>
+
+												<Character data={props.match.params.id} />
+											</>)}>
 						</Route>
 					</main>
 				</Router>

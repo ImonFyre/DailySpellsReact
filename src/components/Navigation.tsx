@@ -20,7 +20,7 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 	{
 		fetch("http://api.artoodeetoo.ca/graphql", {
 			method: "POST",
-			headers: {"content-type": "application/json" , "Access-Control-Allow-Origin": "http://dailyspellsreact.artoodeetoo.ca/" },
+			headers: {"content-type": "application/json" },
 			mode: "cors",
 			body: JSON.stringify({query : `query {
 				characters {
@@ -63,7 +63,7 @@ export class Navigation extends Component<{}, {	error: any,	isLoaded:boolean, it
 											return <NavItem tolink={`/character/${c.id}`} name={c.name} id={c.id} />
 						}));
 
-			return <ul>{nav}</ul> ;
+			return <ul className="pl-2 pr-3 pl-md-4">{nav}</ul> ;
 		}
 	}
 }
