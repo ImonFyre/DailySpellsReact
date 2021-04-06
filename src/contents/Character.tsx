@@ -35,7 +35,7 @@ export class Character extends Component<INumberData,ICharacterState>
 		let graphqlFetch = "http://api.artoodeetoo.ca/graphql";
 		let graphqlOptions : RequestInit =  {
 			method: "POST",
-			headers: {"content-type": "application/json" },
+			headers: {"content-type": "application/json", "access-control-allow-origin": "http://dailyspellsreact.artoodeetoo.ca" },
 			mode: "cors",
 			body: JSON.stringify({query : `query {
 				character(id:${id})
