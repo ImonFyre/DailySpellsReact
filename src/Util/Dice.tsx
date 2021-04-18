@@ -1,15 +1,4 @@
-export enum DiceType
-{
-	d2,
-	d3,
-	d4,
-	d6,
-	d8,
-	d10,
-	d12,
-	d20,
-	d100
-}
+import {DiceType} from "../enum/DiceType"
 
 export class Dice
 {
@@ -46,7 +35,7 @@ export class Dice
 				sides = 100;
 				break;
 		}
-		return Math.floor(Math.random() * sides) + 1;
+		return Math.max(1, Math.floor(Math.random() * sides) + 1 + bonus);
 	}
 }
 
