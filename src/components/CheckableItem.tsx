@@ -4,8 +4,8 @@ import { toast, ToastOptions } from 'react-toastify';
 
 import { ICheckableComponent } from "../interfaces/customInputProps";
 
-import { Dice, DiceType } from "../Util/Dice";
-
+import { Dice } from "../Util/Dice";
+import { DiceType} from "../enum/DiceType"
 const TOAST_PARAMS : ToastOptions = { position: toast.POSITION.TOP_CENTER,
 										autoClose: false };
 
